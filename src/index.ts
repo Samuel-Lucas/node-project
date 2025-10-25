@@ -6,7 +6,7 @@ server.use(express.json())
 
 const userController = new UserController()
 
-server.get('/', userController.getUser)
+server.get('/', userController.getUsers)
 
 server.post('/user', userController.createUser)
 
