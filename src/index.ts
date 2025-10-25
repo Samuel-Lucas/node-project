@@ -1,13 +1,14 @@
 import express from 'express'
+import type {Request, Response} from 'express'
 import { UserController } from './controllers/UserController'
+import { router } from './routes'
 
 const server = express()
 server.use(express.json())
+server.use(router)
 
-const userController = new UserController()
-
-server.get('/', userController.getUsers)
-
-server.post('/user', userController.createUser)
+server.get('/', (request: Request, response: Response) => {
+    return response.status(200).json({ message: "DIOBank Api" })
+})
 
 server.listen(5000, () => console.log("Server on !"))
