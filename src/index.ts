@@ -1,1 +1,17 @@
-console.log("Hello world")
+import express from 'express'
+import type {Request, Response} from 'express'
+
+const server = express()
+server.use(express.json())
+
+server.get('/', (request: Request, response: Response) => {
+    return response.status(200).json({ message: "DIOBank Api"})
+})
+
+server.post('/user', (request: Request, response: Response) => {
+    const body = request.body
+    console.log(body)
+    return response.status(201).json({ message: "Usuário criado"})
+})
+
+server.listen(5000, () => console.log("Server on !"))
