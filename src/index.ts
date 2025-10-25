@@ -1,17 +1,13 @@
 import express from 'express'
-import type {Request, Response} from 'express'
+import { UserController } from './controllers/UserController'
 
 const server = express()
 server.use(express.json())
 
-server.get('/', (request: Request, response: Response) => {
-    return response.status(200).json({ message: "DIOBank Api"})
-})
+const userController = new UserController()
 
-server.post('/user', (request: Request, response: Response) => {
-    const body = request.body
-    console.log(body)
-    return response.status(201).json({ message: "Usuário criado"})
-})
+server.get('/', userController.getUser)
+
+server.post('/user', userController.createUser)
 
 server.listen(5000, () => console.log("Server on !"))
