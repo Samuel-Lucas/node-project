@@ -11,7 +11,7 @@
     "moduleResolution": "node",
     "target": "esnext",
     "esModuleInterop": true,
-    "types": [],
+    "types": ["jest"],
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],

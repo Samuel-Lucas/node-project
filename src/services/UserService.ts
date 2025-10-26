@@ -6,6 +6,11 @@ const db = [
 ]
 
 export class UserService {
+    
+    getAllUsers = () => {
+        return db
+    }
+
     createUser = (name: string, email: string) => {
         const user = {
             name,
@@ -14,9 +19,5 @@ export class UserService {
 
         db.push(user)
         console.log("DB atualizado", db)
-    }
-
-    getAllUsers = () => {
-        return db
     }
 }
