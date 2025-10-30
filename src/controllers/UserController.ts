@@ -4,8 +4,15 @@ import { UserService } from '../services/UserService'
 const userService = new UserService()
 
 export class UserController {
+    
+    userService: UserService
+
+    constructor(userService = new UserService()) {
+        this.userService = userService
+    }
+
     getUsers = (request: Request, response: Response) => {
-        const users = userService.getAllUsers()
+        const users = this.userService.getAllUsers()
         return response.status(200).json(users)
     }
 
@@ -16,7 +23,7 @@ export class UserController {
             return response.status(400).json({ message: "Bad request! name is required"})
         }
 
-        userService.createUser(user.name, user.email)
+        this.userService.createUser(user.name, user.email)
         return response.status(201).json({ message: "Usuário criado"})
     }
 }
