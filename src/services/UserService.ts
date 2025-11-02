@@ -33,4 +33,16 @@ export class UserService {
         this.db.push(user)
         console.log("DB atualizado", this.db)
     }
+
+    removeUser = (name: string | undefined) => {
+
+        if (!this.db.find(db => db.name == name)) {
+            console.log(`${name} não existe no banco de dados`)
+            return
+        }
+
+        const index = this.db.findIndex(item => item.name === name);
+        this.db.splice(index, 1)
+        console.log("DB atualizado", this.db)
+    }
 }

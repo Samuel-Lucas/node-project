@@ -23,7 +23,19 @@ export class UserController {
             return response.status(400).json({ message: "Bad request! name is required"})
         }
 
+        if (!user.email) {
+            return response.status(400).json({ message: "Bad request! email is required"})
+        }
+
         this.userService.createUser(user.name, user.email)
         return response.status(201).json({ message: "Usuário criado"})
+    }
+
+    deleteUser = (request: Request, response: Response) => {
+
+        const { name } = request.params;
+        this.userService.removeUser(name)
+        const users = this.userService.getAllUsers()
+        return response.status(200).json(users)
     }
 }
