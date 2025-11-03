@@ -2,14 +2,14 @@
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
     // File Layout
-    // "rootDir": "./src",
+    "rootDir": "./src",
     "outDir": "./build",
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "ESNext",
+    "module": "ESnext",
     "moduleResolution": "node",
-    "target": "esnext",
+    "target": "ESnext",
     "esModuleInterop": true,
     "types": ["jest"],
     // For nodejs:
@@ -47,7 +47,11 @@
     "skipLibCheck": true
   },
   "include": [
-    "src"
+    "src",
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
   ],
   "moduleSuffix": ".mjs"
 }
