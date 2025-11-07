@@ -4,19 +4,19 @@ import { randomUUID } from 'crypto'
 @Entity('users')
 export class User {
     @PrimaryGeneratedColumn()
-    user_id: string
+    id_user: string
 
-    @Column({ nullable: false })
+    @Column({ type: "varchar", nullable: false })
     name: string
 
-    @Column({ nullable: false })
+    @Column({ type: "varchar", nullable: false })
     email: string
 
-    @Column({ nullable: false })
+    @Column({ type: "varchar", nullable: false })
     password: string
 
     constructor(name: string, email: string, password: string) {
-        this.user_id = randomUUID()
+        this.id_user = randomUUID()
         this.name = name
         this.email = email
         this.password = password

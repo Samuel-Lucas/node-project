@@ -9,23 +9,23 @@ export class User1762091916662 implements MigrationInterface {
                 columns: [
                     {
                         name: 'id_user',
-                        type: 'string',
+                        type: 'varchar',
                         isPrimary: true
                     },
                     {
                         name: 'name',
-                        type: 'string',
+                        type: 'varchar',
                         isNullable: false
                     },
                     {
                         name: 'email',
-                        type: 'string',
+                        type: 'varchar',
                         isNullable: false,
                         isUnique: true
                     },
                     {
                         name: 'password',
-                        type: 'string',
+                        type: 'varchar',
                         isNullable: false
                     }
                 ]

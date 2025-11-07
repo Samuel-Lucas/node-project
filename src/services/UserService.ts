@@ -16,6 +16,10 @@ export class UserService {
         return 
     }
 
+    getUser = async (userId: string): Promise<User | null> => {
+        return await this.userRepository.getUser(userId)
+    }
+
     createUser = (name: string, email: string, password: string): Promise<User> => {
         const user = new User(name, email, password)
         return this.userRepository.createUser(user)
