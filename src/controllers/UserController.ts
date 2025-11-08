@@ -23,7 +23,11 @@ export class UserController {
 
         const user = await this.userService.getUser(userId)
 
-        return response.status(200).json(user)
+        return response.status(200).json({
+            userId: user?.id_user,
+            name: user?.name,
+            email: user?.email
+        })
     }
 
     createUser = (request: Request, response: Response) => {
