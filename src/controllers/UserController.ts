@@ -1,8 +1,6 @@
 import type {Request, Response} from 'express'
 import { UserService } from '../services/UserService'
 
-const userService = new UserService()
-
 export class UserController {
     
     userService: UserService

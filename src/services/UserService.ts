@@ -1,6 +1,6 @@
 import { AppDataSource } from "../database"
 import { User } from "../entities/User"
-import { UserRepository } from "../repositories/userRepository"
+import { UserRepository } from "../repositories/UserRepository"
 
 export class UserService {
 
